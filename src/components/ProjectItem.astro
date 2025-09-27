@@ -26,7 +26,8 @@ const {
     >
       <div class="flex items-center gap-4">
         <span
-          class="inline-flex h-6 w-6 items-center justify-center border border-brown text-brown font-bold"
+          class="inline-flex h-8 w-8 md:h-9 md:w-9 items-center justify-center
+         text-brown font-bold text-2xl md:text-3xl leading-none select-none"
           aria-hidden="true"
         >
           <span class="group-open:hidden">+</span>
@@ -40,7 +41,9 @@ const {
 
       {
         dateLabel && (
-          <Text stylingclasses="text-brown md:mr-2">{dateLabel}</Text>
+          <Text stylingclasses="hidden md:block text-brown md:mr-2">
+            {dateLabel}
+          </Text>
         )
       }
     </summary>

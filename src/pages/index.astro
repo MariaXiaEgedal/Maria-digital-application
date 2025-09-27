@@ -4,139 +4,35 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
+import Hero from "../components/Hero.astro";
+import WhoAmI from "../components/WhoAmI.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 ---
 
 <MainLayout title="Maria Xia Egedal - Multimediedesigner">
   <!--------------------------- 1) HERO --------------------------->
-  <section
-    id="hero"
-    class="grid grid-cols-4 md:grid-cols-12 mx-[20px] md:mx-[100px] mt-20 bg-amber-100 relative min-h-screen"
-  >
-    <div class="col-span-4 md:col-start-5 md:col-span-4 relative aspect-[3/4]">
-      <img
-        src="/img/maria-lyserod.webp"
-        alt="Hero billede af Maria Xia Egedal"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-    </div>
-
-    <div
-      class="col-span-full row-start-4 flex flex-col items-center justify-center mt-8"
-    >
-      <Heading
-        htmlheading="h1"
-        size="large"
-        stylingclasses="text-center leading-none"
-      >
-        Maria&nbsp;Xia
-        <br />
-        Egedal
-      </Heading>
-      <Text>Multimediedesigner</Text>
-    </div>
-  </section>
-
-  <section
-    id="hero"
-    class="relative flex flex-col items-center mt-20 mb-20 bg-amber-100 overflow-hidden"
-  >
-    <!-- Billede -->
-    <img
-      src="/img/maria-lyserod.webp"
-      alt="Hero billede af Maria Xia Egedal"
-      class="max-h-[500px] w-auto object-cover mx-auto"
-    />
-
-    <!-- Tekst nederst på billedet -->
-    <div class="absolute bottom-0 translate-y-2/3 text-center">
-      <h1
-        class="text-6xl md:text-8xl font-extrabold leading-none tracking-tight text-brown-900"
-      >
-        Maria&nbsp;Xia
-        <br />
-        Egedal
-      </h1>
-      <p class="mt-2 text-xl md:text-2xl text-brown-900">Multimediedesigner</p>
-    </div>
-  </section>
-
+  <Hero
+    imageSrc="/img/maria-lyserod.webp"
+    imageAlt="Maria foran bygning"
+    titleTop="MARIA XIA"
+    titleBottom="EGEDAL"
+    subtitle="Multimediedesigner"
+  />
   <!--------------------------- 2) HVEM ER JEG --------------------------->
 
-  <section id="about" class="bg-brown">
-    <div
-      class="grid grid-cols-4 md:grid-cols-12 mx-[20px] md:mx-[100px] pb-20 md:pb-30"
-    >
-      <!-- Overskrift -->
-      <div class="col-span-full md:col-span-12 mb-10">
-        <Heading htmlheading="h2" size="medium" stylingclasses="text-beige">
-          Hvem er jeg?
-        </Heading>
-      </div>
-
-      <!-- Tekst i grid (som før) -->
-      <Text
-        stylingclasses="col-span-4 md:col-start-1 md:col-end-7 md:row-start-2 mb-10"
-      >
-        Hej, mit navn er Maria Xia Egedal, og i sommeren 2024 begyndte jeg på
-        Multimediedesigner uddannelsen på EK og jeg er nu i gang med 3. semester
-        på valgfaet Digital Design.
-      </Text>
-
-      <Text
-        stylingclasses="col-span-4 md:col-start-2 md:col-end-8 md:row-start-3 mb-10"
-      >
-        Jeg har afsluttet min folkeskole og HF på Rudolf Steiner Skolen i
-        Kvistgård, hvor jeg havde kunstneriske fag på lige fod med de
-        traditionelle boglige fag og blev færdig som student i 2022.
-      </Text>
-
-      <Text
-        stylingclasses="col-span-4 md:col-start-1 md:col-end-7 md:row-start-4"
-      >
-        Kreativitet har altid været en vigtig del af mit liv, og jeg brænder for
-        at omsætte idéer til visuelle og digitale løsninger. Derfor valgte jeg
-        denne uddannelse for at udfordre mig selv, lære nye værktøjer og udvikle
-        mine designkompetencer.
-      </Text>
-
-      <div
-        class="relative col-span-4 md:col-start-7 md:col-end-13 md:row-start-2
-             mt-12 md:mt-0 min-h-[420px] md:min-h-[560px]"
-      >
-        <!-- Stort billede -->
-        <figure
-          class="absolute z-0
-               left-[33%] top-0 w-[66%]
-               md:left-auto md:right-0 md:top-0 md:w-[68%]"
-        >
-          <img
-            src="/img/maria-stor.webp"
-            alt="Maria – stort foto"
-            class="w-full h-auto object-cover"
-          />
-        </figure>
-
-        <!-- Lille billede (foran/underlapper på mobil) -->
-        <figure
-          class="absolute z-10
-               left-0 bottom-[-1.25rem] w-[48%]
-               md:left-0 md:bottom-[-2rem] md:w-[34%]"
-        >
-          <img
-            src="/img/maria-lille.webp"
-            alt="Maria – lille foto"
-            class="w-full h-auto object-cover"
-          />
-        </figure>
-      </div>
-    </div>
-  </section>
+  <WhoAmI />
 
   <!--------------------------- 3) PROJEKTER --------------------------->
   <section id="projects">
     <Projects />
+  </section>
+
+  <!-- Decorative Lines -->
+  <section class="flex flex-col gap-3 mt-10 md:mb-40 md:mt-30">
+    <div class="h-3 md:h-6 bg-rose-beige ml-auto w-4/7"></div>
+    <div class="h-3 md:h-6 bg-chestnut ml-auto w-3/7"></div>
+    <div class="h-3 md:h-6 bg-brown ml-auto w-[90%]"></div>
   </section>
 
   <!--------------------------- 4) KOMPETENCER --------------------------->

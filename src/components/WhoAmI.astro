@@ -1,0 +1,72 @@
+---
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Marquee from "./Marquee.astro";
+---
+
+<section id="about" class="bg-brown">
+  <Marquee />
+  <div
+    class="grid grid-cols-4 md:grid-cols-12 mx-[20px] md:mx-[100px] py-10 md:py-15"
+  >
+    <!-- Overskrift -->
+    <div class="col-span-full md:col-span-12 mb-10">
+      <Heading htmlheading="h2" size="medium" stylingclasses="text-beige">
+        HVEM ER JEG?
+      </Heading>
+    </div>
+
+    <!-- Tekst i grid (som før) -->
+    <Text
+      stylingclasses="col-span-4 md:col-span-5 md:row-start-2 mb-10 md:mb-5"
+    >
+      I sommeren 2024 begyndte jeg på Multimediedesigner uddannelsen på EK og
+      jeg er nu i gang med 3. semester på valgfaet Digital Design.
+    </Text>
+
+    <Text
+      stylingclasses="col-span-4 md:col-start-2 md:col-end-7 md:row-start-3 mb-10 md:mb-5"
+    >
+      Jeg har afsluttet min folkeskole og HF på Rudolf Steiner Skolen i
+      Kvistgård i 2022. Der havde jeg kunstneriske fag på lige fod med de
+      traditionelle boglige fag.
+    </Text>
+
+    <Text stylingclasses="col-span-4 md:col-span-5">
+      Kreativitet har altid været en vigtig del af mit liv, og jeg brænder for
+      at omsætte idéer til visuelle og digitale løsninger. Jeg valgte denne
+      uddannelse for at udfordre mig selv, lære nye værktøjer og udvikle mine
+      designkompetencer.
+    </Text>
+
+    <!-- Billeder (samme grid-række og bund-justeret) -->
+    <!-- STORT billede -->
+    <figure
+      class="col-start-2 col-end-5 z-0
+    md:col-start-9 md:col-end-13 /* desktop: 9 → 12 */
+    md:row-start-2 md:row-end-5 md:self-end
+    mt-10"
+    >
+      <img
+        src="/img/maria-stor.webp"
+        alt="Maria – stort foto"
+        class="w-full h-auto object-cover"
+      />
+    </figure>
+
+    <!-- LILLE billede -->
+    <figure
+      class="col-start-1 col-end-3 z-10
+    md:col-start-7 md:col-end-9
+    md:row-start-2 md:row-end-5 md:self-end
+    md:mr-4
+    -mt-40"
+    >
+      <img
+        src="/img/maria-lille.webp"
+        alt="Maria – lille foto"
+        class="w-full h-auto object-cover"
+      />
+    </figure>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+---
+import Heading from "./Heading.astro";
+
+export interface Props {
+  imageSrc: string;
+  imageAlt?: string;
+  titleTop: string;
+  titleBottom: string;
+  subtitle?: string;
+}
+
+const {
+  imageSrc,
+  imageAlt = "",
+  titleTop,
+  titleBottom,
+  subtitle,
+} = Astro.props;
+---
+
+<section class="relative mx-[20px] lg:mx-[100px] mt-10 mb-5 lg:mt-16">
+  <div class="flex flex-col items-center">
+    <!-- IMAGE (smaller on desktop) -->
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class="w-full max-w-[290px] sm:max-w-[300px] lg:max-w-[360px] xl:max-w-[390px] h-auto object-cover"
+      loading="eager"
+    />
+
+    <!-- NAME (overlaps bottom of image) -->
+    <div
+      class="-mt-16 sm:-mt-24 lg:-mt-[200px] xl:-mt-[190px] text-center z-10"
+    >
+      <Heading
+        htmlheading="h1"
+        size="large"
+        stylingclasses="text-brown intersect:enter:animate-fade-right [animation-delay:260ms"
+      >
+        <span class="whitespace-nowrap">{titleTop}</span>
+      </Heading>
+
+      <Heading
+        htmlheading="h1"
+        size="large"
+        stylingclasses="text-brown intersect:enter:animate-fade-right [animation-delay:260ms"
+      >
+        {titleBottom}
+      </Heading>
+    </div>
+
+    <!-- SUBTITLE + ARROW -->
+    {
+      subtitle && (
+        <div class="mt-3">
+          <Heading htmlheading="h4" size="xsmall" stylingclasses="text-brown">
+            {subtitle}
+          </Heading>
+        </div>
+      )
+    }
+    <div class="mt-3">
+      <span
+        class="block text-brown text-2xl animate-bounce-small motion-reduce:animate-none"
+        aria-hidden="true">↓</span
+      >
+    </div>
+  </div>
+</section>

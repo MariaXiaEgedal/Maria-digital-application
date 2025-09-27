@@ -7,8 +7,14 @@ const {
 } = Astro.props;
 const Htmlheading = htmlheading;
 
+// Standard-klasser pr. størrelse
 const sizeClasses = {
-  large: "text-[80px] md:text-[220px]",
+  // H1: stor størrelse + kontrolleret linjeafstand og bogstavmellemrum
+  large:
+    "text-[80px] md:text-[120px] lg:text-[190px] " +
+    "leading-[1] md:leading-[1] " +
+    "tracking-[0.1em] md:tracking-[1.5rem] lg:tracking-[2rem]",
+
   medium: "text-[40px] md:text-[90px]",
   small: "text-[25px] md:text-[40px]",
   xsmall: "text-[20px] md:text-[35px] font-bold",

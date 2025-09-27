@@ -36,3 +36,53 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+@layer utilities {
+  @keyframes bounce-small {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px); /* justér hvor meget den hopper */
+    }
+  }
+
+  .animate-bounce-small {
+    animation: bounce-small 1.6s ease-in-out infinite;
+  }
+}
+
+/* === Marquee utilities === */
+@layer utilities {
+  @keyframes marquee-slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    } /* vi viser samme linje to gange -> -50% */
+  }
+
+  .animate-marquee {
+    animation: marquee-slide var(--marquee-duration, 24s) linear infinite;
+    will-change: transform;
+  }
+
+  /* vend retning */
+  .animate-marquee-reverse {
+    animation-direction: reverse;
+  }
+
+  /* pause på hover af wrapperen */
+  .marquee-paused:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* respekter “reduceret bevægelse” i OS-indstillinger */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
+}

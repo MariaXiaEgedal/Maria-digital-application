@@ -3,11 +3,13 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 
 const topics = [
-  "Social media content, Video content, Projektstyring, UX, UX-Prototyping, UI, Grafisk design, Digital design, Redesign/opdatering af eksisterende websites, Optimering af websites, Data visualization",
+  "Projektstyring, UX (research & wireframes), UI (designsystemer & layout), Prototyping (Figma), Social media content, Video content, Grafisk design, Digitalt design, Responsivt webdesign & mobiltilpasning, Redesign/opdatering af eksisterende websites, Optimering af websites, Datavisualisering.",
 ];
 
-const languages = ["HTML", "CSS", "(JS)"];
-const techSkills = ["Kameraføring/optagelse", "Prototyping", "Bruger testing"];
+const languages = [
+  "HTML, CSS, JavaScript, Tailwind CSS – grundlæggende front-end kodning",
+];
+const techSkills = ["Figma, Prototyping, Bruger test"];
 ---
 
 <section id="skills" class="mx-[20px] lg:mx-[100px] my-20">
@@ -22,7 +24,7 @@ const techSkills = ["Kameraføring/optagelse", "Prototyping", "Bruger testing"];
           size="medium"
           stylingclasses="text-beige mb-6"
         >
-          Kompetencer
+          KOMPETENCER
         </Heading>
 
         <Heading
@@ -80,9 +82,10 @@ const techSkills = ["Kameraføring/optagelse", "Prototyping", "Bruger testing"];
 
     <!-- Højre blok -->
     <div
-      class="lg:col-span-5 relative min-h-[560px] flex items-center justify-center"
+      class="lg:col-span-5 relative flex items-start justify-center py-8
+         lg:items-center lg:min-h-[560px]"
     >
-      <!-- Vis fra lg; skift til 'md:block' hvis de skal være synlige allerede fra md -->
+      <!-- Cirkler kun fra lg -->
       <div
         class="hidden lg:block absolute right-6 -top-8 h-64 w-64 rounded-full bg-brown"
       >
@@ -98,10 +101,10 @@ const techSkills = ["Kameraføring/optagelse", "Prototyping", "Bruger testing"];
 
       <Text
         teksttype="fedbrødtekst md:storbrødtekst"
-        stylingclasses="text-brown text-center text-[20px] md:text-[35px] font-bold mb-0 -mt-100 md:-mt-60 lg:mt-70"
+        stylingclasses="text-brown text-center text-[20px] md:text-[35px] font-bold lg:mt-70"
       >
-        "Jeg er en kreativ multimediedesigner- studerende med fokus på
-        kreativitet, digitalt design og gode brugeroplevelser"
+        “Jeg er multimediedesigner-studerende med fokus på kreativitet, digitalt
+        design og gode brugeroplevelser”
       </Text>
     </div>
   </div>

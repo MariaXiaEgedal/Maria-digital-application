@@ -1,0 +1,72 @@
+---
+import Heading from "./Heading.astro";
+import ProjectItem from "./ProjectItem.astro";
+import Text from "./Text.astro";
+
+const projects = [
+  {
+    title: "Instant Day - Konkurrence",
+    dateLabel: "sep. 2025",
+    images: [
+      { src: "/img/instantday-1.webp", alt: "Forside med countdown" },
+      { src: "/img/instantday-2.webp", alt: "Info-side" },
+      { src: "/img/instantday-3.webp", alt: "Submit-formular" },
+    ],
+    siteUrl: "https://instantday-team14.netlify.app/",
+    siteLabel: "Se hele websitet her",
+  },
+  {
+    title: "Av, Min Guldtand - Festival",
+    dateLabel: "jun. 2025",
+    images: [
+      { src: "/img/guldtand-1.webp" },
+      { src: "/img/guldtand-2.webp" },
+      { src: "/img/guldtand-3.webp" },
+    ],
+    siteUrl: "https://avminguldtand.netlify.app/",
+    siteLabel: "Se hele websitet her",
+  },
+  {
+    title: "Pleasant Urban Sun - Tøj",
+    dateLabel: "apr. 2025",
+    images: [
+      { src: "/img/pleasant-1.webp" },
+      { src: "/img/pleasant-2.webp" },
+      { src: "/img/pleasant-3.webp" },
+    ],
+    siteUrl: "https://pleasant-urban-sun.netlify.app/",
+    siteLabel: "Se hele websitet her",
+  },
+  {
+    title: "Weshelter - Hjælpeplatform",
+    dateLabel: "mar. 2025",
+    images: [
+      { src: "/img/weshelter-1.webp" },
+      { src: "/img/weshelter-2.webp" },
+      { src: "/img/weshelter-3.webp" },
+    ],
+    siteUrl: "https://weshelter-team9.netlify.app/",
+    siteLabel: "Se hele websitet her",
+  },
+];
+---
+
+<section aria-labelledby="projects-heading" class="mx-[20px] md:mx-[100px]">
+  <header class="text-center mb-10">
+    <Heading
+      id="projects-heading"
+      htmlheading="h2"
+      size="medium"
+      stylingclasses="text-brown"
+    >
+      Projekter
+    </Heading>
+    <Text stylingclasses="text-brown">
+      De sidste fire opgaver jeg har været en del af
+    </Text>
+  </header>
+
+  <ol class="divide-y divide-brown">
+    {projects.map((p) => <ProjectItem {...p} />)}
+  </ol>
+</section>

@@ -1,6 +1,160 @@
 ---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+
+const phone = "+45 22 25 33 17";
+const email = "maeg0002@stud.ek.dk";
+const photoSrc = "/img/maria-brun.png";
+
+const facebookHref = "https://www.facebook.com/profile.php?id=100013755789824";
+const instagramHref = "https://www.instagram.com/maria.egedal/";
+const linkedinHref = "https://www.linkedin.com/in/maria-xia-egedal-9a22b8244/";
+
+const facebookIcon = "/img/facebook.svg";
+const instagramIcon = "/img/instagram.svg";
+const linkedinIcon = "/img/linkedin.svg";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
-</div>
-  
+
+<footer class="relative isolate bg-brown text-beige min-h-[85vh]">
+  <!-- Indholdet ligger OVER portrættet -->
+  <div
+    class="relative z-20 mx-[20px] md:mx-[100px] pt-15 pb-[420px] md:pb-[160px]
+           grid grid-cols-1 md:grid-cols-12"
+  >
+    <!-- Overskrift øverst centreret -->
+    <div class="md:col-span-12">
+      <Heading
+        htmlheading="h2"
+        size="medium"
+        stylingclasses="text-beige text-center mb-10 md:mb-20"
+      >
+        Kontakt mig!
+      </Heading>
+    </div>
+
+    <!-- Venstre tekstblok -->
+    <div class="md:col-span-4">
+      <Text>
+        Hvis I har lyst til en uforpligtende samtale om et muligt praktikforløb
+        som webdesigner og content til sociale medier, vil jeg elske at høre fra
+        jer!
+      </Text>
+      <Text stylingclasses="mt-6">
+        Med venlig hilsen<br />Maria
+      </Text>
+    </div>
+
+    <!-- Kontakt + SoMe mobil -->
+    <div class="md:hidden text-left space-y-5">
+      <div class="space-y-1">
+        <Text stylingclasses="tracking-wide mt-8">{phone}</Text>
+        <Text stylingclasses="tracking-wide">{email}</Text>
+      </div>
+      <div class="flex justify-start gap-4 pt-2">
+        <a
+          href={facebookHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="transition-opacity hover:opacity-90"
+        >
+          <img
+            src={facebookIcon}
+            alt="Facebook"
+            class="h-12 w-auto"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href={instagramHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="transition-opacity hover:opacity-90"
+        >
+          <img
+            src={instagramIcon}
+            alt="Instagram"
+            class="h-12 w-auto"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href={linkedinHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="transition-opacity hover:opacity-90"
+        >
+          <img
+            src={linkedinIcon}
+            alt="LinkedIn"
+            class="h-12 w-auto"
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontakt + SoMe (DESKTOP) fast nederst til højre -->
+  <div
+    class="hidden md:flex flex-col items-end gap-4 absolute right-[100px] bottom-8 z-30"
+  >
+    <Text stylingclasses="tracking-wide mt-20">{phone}</Text>
+    <Text stylingclasses="tracking-wide">{email}</Text>
+    <div class="flex gap-4">
+      <a
+        href={facebookHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        class="transition-opacity hover:opacity-90"
+      >
+        <img
+          src={facebookIcon}
+          alt="Facebook"
+          class="h-14 w-auto"
+          loading="lazy"
+        />
+      </a>
+      <a
+        href={instagramHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        class="transition-opacity hover:opacity-90"
+      >
+        <img
+          src={instagramIcon}
+          alt="Instagram"
+          class="h-14 w-auto"
+          loading="lazy"
+        />
+      </a>
+      <a
+        href={linkedinHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="transition-opacity hover:opacity-90"
+      >
+        <img
+          src={linkedinIcon}
+          alt="LinkedIn"
+          class="h-14 w-auto"
+          loading="lazy"
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- Portræt: helt nederst, centreret og BAGVED alt -->
+  <img
+    src={photoSrc}
+    alt="Portræt af Maria"
+    class="pointer-events-none select-none absolute bottom-0 left-1/2 -translate-x-1/2
+           w-[360px] md:w-[620px] max-w-full object-contain -z-10"
+    loading="lazy"
+  />
+</footer>

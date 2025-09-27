@@ -1,0 +1,108 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+
+const topics = [
+  "Social media content, Video content, Projektstyring, UX, UX-Prototyping, UI, Grafisk design, Digital design, Redesign/opdatering af eksisterende websites, Optimering af websites, Data visualization",
+];
+
+const languages = ["HTML", "CSS", "(JS)"];
+const techSkills = ["Kameraføring/optagelse", "Prototyping", "Bruger testing"];
+---
+
+<section id="skills" class="mx-[20px] lg:mx-[100px] my-20">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Venstre blok -->
+    <div class="lg:col-span-7">
+      <div
+        class="-ml-[20px] lg:-ml-[100px] bg-brown text-beige py-[60px] md:py-[100px] px-[20px] md:pl-[100px] md:pr-[50px] rounded-tr-[140px]"
+      >
+        <Heading
+          htmlheading="h2"
+          size="medium"
+          stylingclasses="text-beige mb-6"
+        >
+          Kompetencer
+        </Heading>
+
+        <Heading
+          htmlheading="h3"
+          size="xsmall"
+          stylingclasses="text-beige mb-2"
+        >
+          Emner
+        </Heading>
+        <ul class="mb-8 space-y-1">
+          {
+            topics.map((t) => (
+              <li>
+                <Text stylingclasses="text-beige">{t}</Text>
+              </li>
+            ))
+          }
+        </ul>
+
+        <Heading
+          htmlheading="h3"
+          size="xsmall"
+          stylingclasses="text-beige mb-2"
+        >
+          “Sprog” og kodebiblioteker
+        </Heading>
+        <Text stylingclasses="mb-8 text-beige">{languages.join(", ")}</Text>
+
+        <Heading
+          htmlheading="h3"
+          size="xsmall"
+          stylingclasses="text-beige mb-2"
+        >
+          Tekniske færdigheder
+        </Heading>
+        <Text stylingclasses="mb-8 text-beige">{techSkills.join(", ")}</Text>
+
+        <Heading
+          htmlheading="h3"
+          size="xsmall"
+          stylingclasses="text-beige mb-3"
+        >
+          Værktøjer/programmer
+        </Heading>
+        <div class="mt-2">
+          <img
+            src="/img/ikoner.svg"
+            alt="Ikoner: Adobe Illustrator, InDesign, Premiere Pro, Photoshop, Figma og VS Code"
+            class="h-10 md:h-12 object-contain"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Højre blok -->
+    <div
+      class="lg:col-span-5 relative min-h-[560px] flex items-center justify-center"
+    >
+      <!-- Vis fra lg; skift til 'md:block' hvis de skal være synlige allerede fra md -->
+      <div
+        class="hidden lg:block absolute right-6 -top-8 h-64 w-64 rounded-full bg-brown"
+      >
+      </div>
+      <div
+        class="hidden lg:block absolute right-60 top-64 h-16 w-16 rounded-full bg-[#CBA289]"
+      >
+      </div>
+      <div
+        class="hidden lg:block absolute right-8 top-72 h-36 w-36 rounded-full bg-[#8B5A3C]"
+      >
+      </div>
+
+      <Text
+        teksttype="fedbrødtekst md:storbrødtekst"
+        stylingclasses="text-brown text-center text-[20px] md:text-[35px] font-bold mb-0 -mt-100 md:-mt-60 lg:mt-70"
+      >
+        "Jeg er en kreativ multimediedesigner- studerende med fokus på
+        kreativitet, digitalt design og gode brugeroplevelser"
+      </Text>
+    </div>
+  </div>
+</section>

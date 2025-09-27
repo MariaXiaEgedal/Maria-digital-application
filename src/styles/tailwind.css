@@ -1,12 +1,30 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
-@import "tailwindcss-animated";
-@import "tailwindcss-intersect";
+
+/* ingen animated/intersect her */
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+  font-style: normal;
+}
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
+  /* farver */
+  --color-brown: #3e2e25;
+  --color-beige: #fbebdf;
+  --color-chestnut: #855439;
+  --color-rose-beige: #c89c83;
+
+  /* font */
+  --font-anton: "Anton", sans-serif;
 }
 
 @layer base {
@@ -17,11 +35,4 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
-
-@layer components{
-
-}
-@layer utilities{
-  
 }

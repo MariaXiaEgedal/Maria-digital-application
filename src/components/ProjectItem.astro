@@ -1,0 +1,81 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+
+export interface Props {
+  title: string;
+  dateLabel?: string;
+  images?: Array<{ src: string; alt?: string }>;
+  siteUrl?: string;
+  siteLabel?: string;
+}
+
+const {
+  title,
+  dateLabel,
+  images = [],
+  siteUrl,
+  siteLabel = "Se websitet her",
+} = Astro.props;
+---
+
+<li class="border-b border-brown">
+  <details class="group">
+    <summary
+      class="list-none flex items-center justify-between gap-4 py-6 cursor-pointer"
+    >
+      <div class="flex items-center gap-4">
+        <span
+          class="inline-flex h-6 w-6 items-center justify-center border border-brown text-brown font-bold"
+          aria-hidden="true"
+        >
+          <span class="group-open:hidden">+</span>
+          <span class="hidden group-open:inline">–</span>
+        </span>
+
+        <Heading htmlheading="h3" size="small" stylingclasses="text-brown ">
+          {title}
+        </Heading>
+      </div>
+
+      {
+        dateLabel && (
+          <Text stylingclasses="text-brown md:mr-2">{dateLabel}</Text>
+        )
+      }
+    </summary>
+
+    <div class="pb-8">
+      {
+        images.length > 0 && (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {images.map((img) => (
+              <figure class="aspect-[16/10] overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt ?? ""}
+                  class="w-full h-full object-cover"
+                />
+              </figure>
+            ))}
+          </div>
+        )
+      }
+
+      {
+        siteUrl && (
+          <p class="mt-4">
+            <a
+              href={siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline text-brown"
+            >
+              {siteLabel}
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </details>
+</li>
